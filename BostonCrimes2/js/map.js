@@ -208,7 +208,8 @@ require(
         
         //End renderer Section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         statArray = [];
-    
+        ctArray = [];
+        ctObj = {};
         //bosCrimeFeatLyr.on("edits-complete",function(com){console.log(com)});
         bosCrimeFeatLyr.on("edits-complete",crimeFreq);
     
@@ -226,9 +227,18 @@ require(
                 var merGeom = mercUtil.geographicToWebMercator(pnt);
                 var crimeGraphic = new graphic();
                 //var pnt = new ePoint(crime["x"],crime["y"])//,outgpSpat);
-                var attr =          {"incident_type_description":crime["incident_type_description"],"reportingarea":crime["reportingarea"],"reptdistrict":crime["reptdistrict"],"fromdate":crime["fromdate"]}
+                var attr = {"incident_type_description":crime["incident_type_description"],"reportingarea":crime["reportingarea"],"reptdistrict":crime["reptdistrict"],"fromdate":crime["fromdate"]}
                 
                 statArray.push(attr["reptdistrict"]);
+                ctArray.push(attr["incident_type_description"]);
+
+                if(ctObj.hasOwnProperty(attr.incident_type_description)){
+                    ctObj[attr.incident_type_description] = ctObj[attr.incident_type_description] + 1;
+
+                }else{
+                    ctObj[attr.incident_type_description] = 1;
+                }
+
                 //if (pnt.spatialReference.wkid === 4326){
                     pnt.setSpatialReference(outgpSpat);
                     crimeGraphic.setAttributes(attr);
@@ -267,23 +277,7 @@ require(
 		//}
 	 
 	
-   /*  var padres = new FeatureLayer("http://localhost:6080/arcgis/rest/services/Baseball/PetcoHits2013/MapServer/1")
 
-myMap.addLayer(padres);
-
-    //Create the Query Params and Task
-    var qParams = new QueryParams();
-    qParams.where = "description = 'Home Run'";
-    qParams.returnGeometry = true;
- */
-    
-   /*  var qTask = new QueryTask("http://localhost:6080/arcgis/rest/services/Baseball/PetcoHits2013/MapServer/1");
-    
-    qTask.execute(qParams,function(res){
-        console.log(res);
-                  },function(e){
-        console.log(e);
-    }) */
     
     
     
