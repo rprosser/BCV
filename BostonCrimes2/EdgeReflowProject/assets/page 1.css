@@ -1,0 +1,57 @@
+/* This code is only meant for previewing your Reflow design. */
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+    background-color: rgb(189, 227, 204);
+}
+
+#map {
+    float: left;
+    height: 684px;
+    margin-left: 0%;
+    margin-top: 6px;
+    clear: none;
+    width: 93.367025%;
+    border: 2px solid rgb(111, 158, 132);
+}
+
+#lowercontainer {
+    float: left;
+    height: 204px;
+    margin-left: 0%;
+    margin-top: 15px;
+    clear: both;
+    width: 93.365967%;
+    background-image:-webkit-linear-gradient(270deg, rgba(0, 69, 29, 0.368627) 1%, black 100%);
+    background-image: linear-gradient(180deg, rgba(0, 69, 29, 0.368627) 1%, black 100%);
+    background-attachment: scroll;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat repeat;
+}
+
+#chart {
+    float: left;
+    height: 180px;
+    margin-left: 11.629934%;
+    margin-top: 13px;
+    clear: none;
+    width: 36.147093%;
+    border: 2px solid rgb(111, 158, 132);
+}
+
+#toggle {
+    float: left;
+    height: 180px;
+    margin-left: 11.314384%;
+    margin-top: 13px;
+    clear: none;
+    width: 36.147093%;
+    margin-right: 0%;
+    border: 2px solid rgb(111, 158, 132);
+}
+
