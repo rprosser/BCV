@@ -62,7 +62,7 @@ require(
     // basemap: "gray",
     
     var myMap = new Map("map",{
-          basemap: "gray",
+          basemap: "satellite",
 		  extent:mape
         });
     myMap.on("pan",function(myMap){
